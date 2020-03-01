@@ -40,6 +40,9 @@ define Build/boot-img
 	mmd -i $@.boot ::/overlays
 	mcopy -i $@.boot $(DTS_DIR)/overlays/*.dtbo ::/overlays/
 	mcopy -i $@.boot $(DTS_DIR)/overlays/README ::/overlays/
+	if [ -d $(TOPDIR)/overlay/boot ]; then \
+		mcopy -D o -i $@.boot $(TOPDIR)/overlay/boot/* ::; \
+	fi;
 endef
 
 define Build/sdcard-img
