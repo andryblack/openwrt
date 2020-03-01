@@ -19,6 +19,13 @@ menuconfig DEVEL
 		  Store built firmware images and filesystem images in this directory.
 		  If not set, uses './bin/$(BOARD)'
 
+    config BUILD_ROOT
+		string "Build root folder" if DEVEL
+		default ""
+		help
+		  Store built files in this directory.
+		  If not set, uses './'
+
 	config DOWNLOAD_FOLDER
 		string "Download folder" if DEVEL
 		default ""
