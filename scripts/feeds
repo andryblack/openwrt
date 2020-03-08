@@ -10,6 +10,7 @@ use Cwd 'abs_path';
 
 chdir "$FindBin::Bin/..";
 $ENV{TOPDIR} //= getcwd();
+$ENV{BUILDTOPDIR} or $ENV{BUILDTOPDIR}=$ENV{TOPDIR};
 chdir $ENV{TOPDIR};
 $ENV{GIT_CONFIG_PARAMETERS}="'core.autocrlf=false'";
 $ENV{GREP_OPTIONS}="";
