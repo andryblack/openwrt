@@ -23,7 +23,7 @@ endef
 
 define Build/boot-img
 	rm -f $@.boot
-	mkfs.fat -C $@.boot $(FAT32_BLOCKS)
+	mkfs.fat -n boot -C $@.boot $(FAT32_BLOCKS)
 	mcopy -i $@.boot $(KDIR)/COPYING.linux ::
 	mcopy -i $@.boot $(KDIR)/bootcode.bin ::
 	mcopy -i $@.boot $(KDIR)/LICENCE.broadcom ::
